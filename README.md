@@ -1,52 +1,51 @@
 
+---
 
-# 📄 GitHub Repo Documentation Generator
+# 📄 Codebase Documentation Generator
 
-A powerful Streamlit-based tool that combines **Neo4j**, **FAISS**, **Sentence Transformers**, and **Groq LLM** to generate technical documentation and answer custom queries about a codebase.
+A lightweight tool to **generate documentation** and **answer technical questions** about any codebase using:
+
+- 🌐 **Neo4j** for code graph storage  
+- 🔍 **FAISS** for semantic code search  
+- 🧠 **Sentence Transformers** for embeddings  
+- ⚡ **Groq (LLaMA 3)** for fast and accurate LLM responses  
+
+---
+
+## 🗂 Directory Structure
+
+```
+amanpreet0kaur-codebase-documentation-generator/
+├── README.md                  # This file
+├── app2.py                   # Streamlit UI for querying & documentation
+├── embed.py                  # Embedding generator + FAISS index builder
+├── graph.py                  # Neo4j query logic
+├── faiss_functions.bin       # FAISS index for functions
+├── faiss_functions.pkl       # Function metadata
+├── faiss_variables.bin       # FAISS index for variables
+├── faiss_variables.pkl       # Variable metadata
+├── faiss_files.bin           # FAISS index for files
+├── faiss_files.pkl           # File metadata
+```
 
 ---
 
 ## 🚀 Features
 
-- 🔍 **Query the Knowledge Graph**: Search for functions, variables, files, and configurations from a Neo4j-based code graph.
-- 📚 **Context-Aware QA**: Retrieve relevant code context using FAISS and generate explanations using an LLM.
-- 📘 **Full Documentation Generation**: Automatically create detailed documentation based on metadata from code.
-- 🧠 **LLM-Powered Insights**: Uses Groq's `llama3-70b-8192` model for intelligent, developer-focused documentation generation.
+- 🔍 **Search across functions, variables, files**
+- 🧠 **Query-aware explanations via LLM**
+- 📘 **Autogenerate full documentation**
+- ⚡️ Fast and scalable using FAISS + Groq
 
 ---
 
-## 🛠 Tech Stack
-
-| Layer             | Tools Used                            |
-|------------------|----------------------------------------|
-| UI               | Streamlit                             |
-| Embedding Model  | SentenceTransformers (`all-MiniLM-L6-v2`) |
-| Semantic Search  | FAISS                                 |
-| Knowledge Graph  | Neo4j                                 |
-| LLM              | Groq API with `llama3-70b-8192`        |
-
----
-
-## 🧩 Project Structure
-
-```
-├── app.py                 # Streamlit app (UI + LLM + Graph search)
-├── embed_generate.py      # Script to generate and store embeddings in FAISS
-├── faiss_functions.bin    # FAISS index for functions
-├── faiss_variables.bin    # FAISS index for variables
-├── faiss_files.bin        # FAISS index for files
-├── faiss_*.pkl            # Metadata for each FAISS index
-```
-
----
-
-## 🧪 Setup Instructions
+## ⚙️ Setup Instructions
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/repo-doc-generator.git
-cd repo-doc-generator
+git clone https://github.com/<your-username>/amanpreet0kaur-codebase-documentation-generator.git
+cd amanpreet0kaur-codebase-documentation-generator
 ```
 
 ### 2. Install Dependencies
@@ -55,49 +54,97 @@ cd repo-doc-generator
 pip install -r requirements.txt
 ```
 
-### 3. Start Neo4j
+If you don't have a `requirements.txt` yet, here's a sample:
 
-Make sure you have Neo4j running locally on `bolt://localhost:7687` and populated with your code graph using `Function`, `Variable`, `File`, `Configuration` nodes.
-
-### 4. Generate Embeddings (Once)
-
-Run the script to generate FAISS indexes:
-
-```bash
-python embed_generate.py
+```txt
+streamlit
+faiss-cpu
+numpy
+sentence-transformers
+neo4j
+groq
 ```
 
-### 5. Run the App
+### 3. Setup Neo4j
+
+Ensure you have Neo4j running locally:
 
 ```bash
-streamlit run app.py
+bolt://localhost:7687
+```
+
+Graph nodes expected:  
+- `Function`, `Variable`, `File`, `Configuration`
+
+Update credentials in `graph.py` and `embed.py` if needed:
+
+```python
+NEO4J_URI = "bolt://localhost:7687"
+NEO4J_USER = "neo4j"
+NEO4J_PASS = "your_password"
+```
+
+### 4. Generate Embeddings + FAISS Index
+
+```bash
+python embed.py
+```
+
+This generates:
+- `faiss_*.bin` (FAISS indexes)
+- `faiss_*.pkl` (metadata)
+
+### 5. Launch the App
+
+```bash
+streamlit run app2.py
 ```
 
 ---
 
-## 🔐 Environment Variables
+## 🔐 API Configuration
 
-Set your Groq API key inside `app.py`:
+Add your [Groq API Key](https://console.groq.com/) in `app2.py`:
 
 ```python
+from groq import Groq
 client = Groq(api_key="your_groq_api_key")
 ```
 
 ---
 
-## 🧠 How it Works
+## 📘 How It Works
 
-1. **Neo4j Graph Querying**:
-   - Fetches all nodes (functions, variables, files, configurations) related to the user query.
+1. **embed.py**  
+   → Connects to Neo4j  
+   → Extracts functions, variables, files  
+   → Creates SentenceTransformer embeddings  
+   → Saves to FAISS + metadata files  
 
-2. **FAISS Retrieval**:
-   - Matches semantically similar items using vector search on pre-computed embeddings.
-
-3. **Groq LLM**:
-   - Uses retrieved context to generate answers or full documentation.
+2. **app2.py**  
+   → Takes user queries  
+   → Searches both Neo4j & FAISS  
+   → Passes relevant context to LLM  
+   → Returns generated explanation or full documentation  
 
 ---
 
+## 🧠 Powered By
+
+- **Neo4j** – Code relationship graph  
+- **FAISS** – Fast Approximate Nearest Neighbors  
+- **Sentence Transformers** – Semantic search  
+- **Groq + LLaMA 3** – LLM-based responses and documentation  
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+Let me know if you'd like to include a badge section, GitHub Actions CI, or `.env` support next!
 ## 📷 UI Preview
 
 > *Add screenshots or gifs of the Streamlit UI here*
