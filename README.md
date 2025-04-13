@@ -132,7 +132,8 @@ client = Groq(api_key="your_groq_api_key")
 
 ## 📷 UI Preview
 
-> *Add screenshots or gifs of the Streamlit UI here*
+![image](https://github.com/user-attachments/assets/1128793c-5eb2-481c-b0a2-d88c1c29429b)
+
 
 ---
 
