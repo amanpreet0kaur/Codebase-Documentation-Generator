@@ -1,0 +1,6 @@
+streamlit
+faiss-cpu
+numpy
+sentence-transformers
+neo4j
+groq
