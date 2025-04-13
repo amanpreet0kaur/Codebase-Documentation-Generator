@@ -54,16 +54,7 @@ cd amanpreet0kaur-codebase-documentation-generator
 pip install -r requirements.txt
 ```
 
-If you don't have a `requirements.txt` yet, here's a sample:
 
-```txt
-streamlit
-faiss-cpu
-numpy
-sentence-transformers
-neo4j
-groq
-```
 
 ### 3. Setup Neo4j
 
@@ -138,23 +129,15 @@ client = Groq(api_key="your_groq_api_key")
 
 ---
 
-## 📄 License
 
-MIT License
-
----
-
-Let me know if you'd like to include a badge section, GitHub Actions CI, or `.env` support next!
 ## 📷 UI Preview
 
 > *Add screenshots or gifs of the Streamlit UI here*
 
 ---
 
-## 📃 License
 
-MIT License. Feel free to use and modify!
 
----
 
-Let me know if you want a shorter version or if you'd like to publish this to Hugging Face or Streamlit Cloud!
+
+
