@@ -15,17 +15,21 @@ A lightweight tool to **generate documentation** and **answer technical question
 ## 🗂 Directory Structure
 
 ```
-amanpreet0kaur-codebase-documentation-generator/
-├── README.md                  # This file
-├── app2.py                   # Streamlit UI for querying & documentation
-├── embed.py                  # Embedding generator + FAISS index builder
-├── graph.py                  # Neo4j query logic
-├── faiss_functions.bin       # FAISS index for functions
-├── faiss_functions.pkl       # Function metadata
-├── faiss_variables.bin       # FAISS index for variables
-├── faiss_variables.pkl       # Variable metadata
-├── faiss_files.bin           # FAISS index for files
-├── faiss_files.pkl           # File metadata
+Directory structure:
+└── amanpreet0kaur-codebase-documentation-generator/
+    ├── README.md
+    ├── requirements.txt
+    └── app/
+        ├── app2.py
+        ├── embed.py
+        ├── faiss_files.bin
+        ├── faiss_files.pkl
+        ├── faiss_functions.bin
+        ├── faiss_functions.pkl
+        ├── faiss_variables.bin
+        ├── faiss_variables.pkl
+        └── graph.py
+
 ```
 
 ---
