@@ -131,8 +131,11 @@ client = Groq(api_key="your_groq_api_key")
 
 
 ## 📷 UI Preview
-
+QUERY SEARCH:
 ![image](https://github.com/user-attachments/assets/1128793c-5eb2-481c-b0a2-d88c1c29429b)
+DOCUMENTATION GENERATION:
+![image](https://github.com/user-attachments/assets/a889c50c-034e-472c-a397-96fa5e125571)
+
 
 
 ---
