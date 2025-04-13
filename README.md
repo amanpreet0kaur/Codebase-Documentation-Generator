@@ -1,6 +1,4 @@
-Here’s a clean and professional `README.md` for your **GitHub Repo Documentation Generator** project:
 
----
 
 # 📄 GitHub Repo Documentation Generator
 
