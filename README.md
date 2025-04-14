@@ -36,14 +36,14 @@ Directory structure:
 
 ## 🚀 Features
 
-- 🔍 **Search across functions, variables, files**
-- 🧠 **Query-aware explanations via LLM**
-- 📘 **Autogenerate full documentation**
-- ⚡️ Fast and scalable using FAISS + Groq
+-  **Search across functions, variables, files**
+-  **Query-aware explanations via LLM**
+-  **Autogenerate full documentation**
+-  Fast and scalable using FAISS + Groq
 
 
 
-## 📘 How It Works
+##  How It Works
 
 1. **embed.py**  
    → Connects to Neo4j  
@@ -57,16 +57,7 @@ Directory structure:
    → Passes relevant context to LLM  
    → Returns generated explanation or full documentation  
 
----
 
-## 🧠 Powered By
-
-- **Neo4j** – Code relationship graph  
-- **FAISS** – Fast Approximate Nearest Neighbors  
-- **Sentence Transformers** – Semantic search  
-- **Groq + LLaMA 3** – LLM-based responses and documentation  
-
----
 
 
 ## 📷 UI Preview
