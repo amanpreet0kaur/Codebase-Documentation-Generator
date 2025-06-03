@@ -11,7 +11,7 @@ NEO4J_URI = "bolt://localhost:7687"
 NEO4J_USER = "neo4j"
 NEO4J_PASS = "12345678"
 model = SentenceTransformer("all-MiniLM-L6-v2")
-client = Groq(api_key="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")  # Replace this!
+client = Groq(api_key="")  
 
 # --- Neo4j Driver ---
 driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))
